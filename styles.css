@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes entrada {
+    from { 
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    background-color: #121215;
+    color: #eaeaea;
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-areas: "profile timeline";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100vh;
+}
+
+nav {
+    padding: 64px;
+    grid-area: timeline;
+    overflow-y: scroll;
+    animation: entrada 0.5s ease-in-out;
+}
+
+.memoria {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(#727275, #2c2c31) 1;
+}
+
+.memoria small {
+    color: #9696c5;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: -12px;
+}
+
+.memoria h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 75px;
+}
+
+.memoria h2 {
+    text-align: center;
+    color: #cbcbdd;
+    margin-top: -35px;
+}
+
+#descList {
+    margin-bottom: -20px;
+}
+
+.memoria img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    max-height: 350px;
+    max-width: 500px;
+    margin: auto;
+    border: 4px solid transparent;
+    background: linear-gradient(#d39e33, #ed5636, #633bbc) padding-box, linear-gradient(260deg, #d39e33, #ed5636, #633bbc) border-box;
+    box-shadow: 1px 1px 7px rgba(102, 59, 188, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.memoria img:hover {
+    transform: scale(1.1);
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.memoria p {
+    margin-top: -5px;
+    font-size: 1.2rem;
+    color: #bebebf;
+    line-height: 28px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.memoria ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -17px;
+    color: #2ac9bb;
+}
+
+.memoria a {
+    text-decoration: none;
+    color: #eaeaea;
+}
+
+aside {
+    grid-area: profile;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-right: 1px solid;
+    border-image: linear-gradient(#727275, #2c2c31) 1;
+    background-image: url(assets/background.svg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+aside * {
+    animation: entrada 0.5s ease-in-out;
+}
+
+aside #victor {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background: linear-gradient(#d39e33, #ed5636, #633bbc) padding-box, linear-gradient(260deg, #d39e33, #ed5636, #633bbc) border-box;
+    box-shadow: 1px 1px 7px rgba(102, 59, 188, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+aside a {
+    text-decoration: none;
+    color: white;
+}
+
+aside #victor:hover {
+    transform: scale(1.1);
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+aside p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+aside span {
+    font-size: 0.75rem;
+    color: #9e9ea0;
+}
+
+abbr {
+    text-decoration: underline;
+    color: #fafafd;
+}
+
+@media (max-width: 768px){
+    :root {
+        font-size: 14px;
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.8fr;
+        grid-template-areas: 
+        "profile"
+        "timeline"
+        ;
+    }
+
+    aside {
+        border-right: none;
+        padding: 32px 12px;
+    }
+
+    nav {
+        overflow-y: visible;
+        padding: 22px;
+        margin-bottom: -330px;
+    }
+}
+
+footer {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+footer h2 {
+    margin-top: -52px;
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #00ffea;
+}
+
+#logos {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#html, 
+#css{
+    width: 75px;
+    height: 100px;
+}
+
+#html {
+    margin-top: 0.4px;
+}
